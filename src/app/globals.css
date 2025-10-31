@@ -4,6 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  background-image: {
+    heroBg: url('/slider/bgswiper.png');
+  };
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -119,4 +122,11 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.swiper-button-prev{
+  @apply text-orange-600 !important
+}
+.swiper-button-next{
+  @apply text-orange-600 !important
 }
