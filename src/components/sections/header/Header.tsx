@@ -3,9 +3,9 @@ import { navigationLinks } from '@/constans';
 import { MessageCircle, Phone } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import MobileMenu from './MobileMenu';
+import SearchPage from './Search';
 
 const Header = () => {
 
