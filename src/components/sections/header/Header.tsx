@@ -1,9 +1,11 @@
 import { ModeToggle } from '@/components/mode-toggle';
+import { navigationLinks } from '@/constans';
 import { MessageCircle, Phone } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import MobileMenu from './MobileMenu';
 
 const Header = () => {
 
@@ -28,10 +30,10 @@ const Header = () => {
           </div>
 
           <div className="flex gap-3 items-center">
-              <div className="bg-white p-2 rounded-full">
-                  <Phone size={12} className="text-orange-500" />
-              </div>
-              050 505 50 05
+            <div className="bg-white p-2 rounded-full">
+              <Phone size={12} className="text-orange-500" />
+            </div>
+            050 505 50 05
           </div>
         </div>
 
