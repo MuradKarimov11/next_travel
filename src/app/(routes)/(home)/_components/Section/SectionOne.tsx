@@ -1,11 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from 'next/image'
 import React from 'react'
 
-
-const fadeInVariants = {
+const fadeInVariants: Variants = {
   hidden: { y: -100, opacity: 0 },
   visible: (index: number) => ({
     y: 0,
@@ -13,7 +12,7 @@ const fadeInVariants = {
     transition: {
       delay: index * 0.5, // Her resme 0.5 saniye gecikme ekleniyor
       duration: 0.8,
-      ease: "easeOut",
+      ease: [0.22, 1, 0.36, 1],
     }
   }),
 }
@@ -22,14 +21,13 @@ const SectionOne = () => {
     <div className='mx-auto container lg:mt-8 md:mt-44 mt-64'>
       <div className='flex flex-col md:flex-row gap-8 px-3 lg:px-28'>
         <motion.div
-         className='group overflow-hidden relative'
-         initial="hidden"
-         whileInView="visible"
-         viewport={{once:false, amount:0.4}}
-         transition={{delay:0.1}}
-         variants={fadeInVariants}
-         custom={0}
-         
+          className='group overflow-hidden relative'
+          initial="hidden"
+          whileInView="visible"
+          viewport={{once:false, amount:0.4}}
+          transition={{delay:0.1}}
+          variants={fadeInVariants}
+          custom={0}
          >
           <Image
             alt=''
@@ -41,15 +39,14 @@ const SectionOne = () => {
         </motion.div>
 
         <motion.div
-         className='group overflow-hidden relative'
-         initial="hidden"
-         whileInView="visible"
-         viewport={{once:false, amount:0.4}}
-         transition={{delay:0.1}}
-         variants={fadeInVariants}
-         custom={1}
-         
-         >
+          className='group overflow-hidden relative'
+          initial="hidden"
+          whileInView="visible"
+          viewport={{once:false, amount:0.4}}
+          transition={{delay:0.1}}
+          variants={fadeInVariants}
+          custom={1}
+        >
           <Image
             alt=''
             src="/home/2.jpg"

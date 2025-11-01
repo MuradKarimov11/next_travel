@@ -21,8 +21,8 @@ const Footer = () => {
     <footer className='relative bg-black text-white'>
 
       <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 
-      bg-orange-500 text-left px-6 py-12 rounded-md shadow-lg w-11/12 max-w-6xl h-72
-       grid grid-cols-1 md:grid-cols-2 items-center gap-6">
+        bg-orange-500 text-left px-6 py-12 rounded-md shadow-lg w-11/12 max-w-6xl h-72
+        grid grid-cols-1 md:grid-cols-2 items-center gap-6">
         <div>
           <h2 className="text-3xl font-bold">Ready to get started?</h2>
           <p className="mt-2 text-lg">
@@ -30,9 +30,9 @@ const Footer = () => {
           </p>
 
           <Link href="/register">
-          <Button className="mt-4 bg-white text-orange-500 px-6 py-2 font-semibold rounded shadow-md hover:bg-gray-100">
-            OPEN AN ACCOUNT
-          </Button>
+            <Button className="mt-4 bg-white text-orange-500 px-6 py-2 font-semibold rounded shadow-md hover:bg-gray-100">
+              OPEN AN ACCOUNT
+            </Button>
           </Link>
 
         </div>
@@ -44,7 +44,6 @@ const Footer = () => {
             alt="Call to action graphic"
             className="hidden md:block absolute w-full -bottom-28 "
           />
-
         </div>
 
 
