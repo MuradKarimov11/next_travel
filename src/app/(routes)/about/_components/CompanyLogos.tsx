@@ -21,8 +21,7 @@ const CompanyLogos = () => {
                 Trusted by Leading Companies
             </h2>
             <Marquee
-                speed={100}
-                
+                speed={100}                
             >
                 {companyLogos.map((logo, index) => (
                     <div key={index}

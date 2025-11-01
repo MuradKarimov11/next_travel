@@ -1,3 +1,5 @@
+'use client';
+
 import { ModeToggle } from '@/components/mode-toggle';
 import { navigationLinks } from '@/constans';
 import { MessageCircle, Phone } from 'lucide-react';
@@ -6,8 +8,11 @@ import Link from 'next/link';
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import MobileMenu from './MobileMenu';
 import SearchPage from './Search';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
+  
+  const pathname = usePathname();
 
   const socialLinks = [
     { href: "#", icon: <FaFacebook size={16} /> },

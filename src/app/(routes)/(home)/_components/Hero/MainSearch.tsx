@@ -95,9 +95,9 @@ const MainSearch = () => {
         </Select>
 
         <Button 
-        onClick={handleSearch}
+          onClick={handleSearch}
         
-        className="bg-orange-500 text-white hover:bg-orange-600 py-6 w-full">
+          className="bg-orange-500 text-white hover:bg-orange-600 py-6 w-full">
           Find Now
         </Button>
       </div>
