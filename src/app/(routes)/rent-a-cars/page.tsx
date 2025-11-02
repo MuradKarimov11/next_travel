@@ -1,9 +1,12 @@
 import React from 'react'
+import RentacarList from './_components/RentacarList'
 
-const RentACarsPage = () => {
+const Rentacar = () => {
   return (
-    <div>RentACarsPage </div>
+    <div>
+      <RentacarList/>
+    </div>
   )
 }
 
-export default RentACarsPage 
+export default Rentacar
