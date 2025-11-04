@@ -4,6 +4,12 @@ import bcrypt from "bcrypt";
 import { prismadb } from "@/lib/db";
 import { JWT } from "next-auth/jwt";
 
+interface CustomToken extends JWT {
+  id?: string;
+  firstName?: string;
+  lastName?: string;
+}
+
 interface CustomUser {
   id: string;
   firstName: string;
@@ -11,14 +17,16 @@ interface CustomUser {
   email: string;
 }
 
+interface CustomSessionUser {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  token: CustomToken;
+}
+
 interface CustomSession extends Session {
-  user: {
-    id: string;
-    email: string;
-    firstName: string;
-    lastName: string;
-    token: JWT;
-  }
+  user: CustomSessionUser;
 }
 
 export const authOptions: NextAuthOptions={
@@ -65,14 +73,18 @@ export const authOptions: NextAuthOptions={
             }
             return token;
         },
-        async session({ session, token }: { session: Session; token: JWT }) {
-            if (session?.user) {
-                (session.user as any).id = token.id;
-                (session.user as any).firstName = token.firstName || "";
-                (session.user as any).lastName = token.lastName || "";
-                (session.user as any).token = token;
+        async session({ session, token }: { session: Session; token: CustomToken }): Promise<CustomSession> {
+            if (session.user) {
+                const customUser: CustomSessionUser = {
+                id: token.id ?? "",
+                email: session.user.email ?? "",
+                firstName: token.firstName ?? "",
+                lastName: token.lastName ?? "",
+                token,
+                };
+                return { ...session, user: customUser };
             }
-            return session;
+            return session as CustomSession;
         }
     },
     pages:{

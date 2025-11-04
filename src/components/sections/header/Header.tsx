@@ -2,17 +2,19 @@
 
 import { ModeToggle } from '@/components/providers/mode-toggle';
 import { navigationLinks } from '@/constans';
-import { MessageCircle, Phone } from 'lucide-react';
+import { MessageCircle, Phone, User, UserPlus } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import MobileMenu from './MobileMenu';
 import SearchPage from './Search';
 import { usePathname } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 const Header = () => {
   
   const pathname = usePathname();
+  const { data: session, status } = useSession();
 
   const socialLinks = [
     { href: "#", icon: <FaFacebook size={16} /> },
