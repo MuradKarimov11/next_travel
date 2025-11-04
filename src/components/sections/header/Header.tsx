@@ -1,6 +1,6 @@
 'use client';
 
-import { ModeToggle } from '@/components/mode-toggle';
+import { ModeToggle } from '@/components/providers/mode-toggle';
 import { navigationLinks } from '@/constans';
 import { MessageCircle, Phone } from 'lucide-react';
 import Image from 'next/image';
